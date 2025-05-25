@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "app/index.py",
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "15mb",
+        "runtime": "python3.10",
+        "buildCommand": "bash build_vercel.sh"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "app/index.py"
+    }
+  ],
+  "env": {
+    "FLASK_APP": "app:app",
+    "FLASK_ENV": "production",
+    "PYTHONPATH": "."
+  }
+}
