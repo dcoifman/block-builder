@@ -15,7 +15,7 @@ This guide provides step-by-step instructions for deploying the Strength Tracker
 Your project has been pre-configured with the following files to facilitate Vercel deployment:
 
 *   **`vercel.json`:** This file in the project root tells Vercel how to build and route your application. It defines the Python runtime, build commands, static file handling, and environment variables.
-*   **`app/index.py`:** This is the primary entry point for the application when deployed on Vercel. It makes the Flask app instance available to Vercel's Python runtime.
+*   **`app/index.py`:** This is the primary entry point for the application when deployed on Vercel. It makes the Flask app instance available to Vercel's Python runtime. Crucially, this file must make the Flask application instance available as a global variable named specifically `app` or `handler`. For example: `from app import app` (if your Flask instance in `app/__init__.py` is named `app`). Vercel's Python runtime looks for one of these specific variable names to serve the application.
 *   **`build_vercel.sh`:** A shell script located in the project root. It's configured in `vercel.json` as a custom build command. This script installs Python dependencies and attempts to initialize and seed the SQLite database (`app.db`) during Vercel's build process.
 *   **`requirements.txt`:** This file lists all the Python dependencies (like Flask, SQLAlchemy, Gunicorn) required by the application.
 
