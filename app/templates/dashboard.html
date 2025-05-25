@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - {{ current_user.username }}{% endblock %}
+
+{% block content %}
+<div id="dashboard-content">
+    <h2>Welcome, {{ current_user.username }}!</h2>
+
+    <section id="user-maxes-section" class="dashboard-section">
+        <h3>Your One-Rep Maxes (1RMs)</h3>
+        <ul id="user-maxes-list">
+            <li>Loading your maxes...</li>
+            {# Maxes will be populated by JavaScript #}
+        </ul>
+        
+        <h4>Add/Update 1RM</h4>
+        <form id="add-max-form">
+            <div>
+                <label for="exercise-select">Exercise:</label>
+                <select id="exercise-select" name="exercise_name" required>
+                    <option value="">Loading exercises...</option>
+                    {# Options will be populated by JavaScript #}
+                </select>
+            </div>
+            <div>
+                <label for="max-weight-input">Max Weight (kg):</label>
+                <input type="number" id="max-weight-input" name="max_weight" step="0.5" min="0" required>
+            </div>
+            <button type="submit" class="btn">Save Max</button>
+            <div id="add-max-feedback" style="margin-top: 10px;"></div>
+        </form>
+    </section>
+
+    <section id="poliquin-targets-section" class="dashboard-section">
+        <h3>Poliquin Ratio Targets</h3>
+        <ul id="poliquin-targets-list">
+            <li>Loading targets...</li>
+            {# Targets will be populated by JavaScript #}
+        </ul>
+        <p><small>These targets are calculated based on your recorded 1RMs for primary exercises. Ensure your 1RMs are up-to-date for accurate targets.</small></p>
+    </section>
+
+    <section class="dashboard-section">
+        <h3>Quick Actions</h3>
+        <a href="{{ url_for('main_bp.view_program') }}" class="btn">View My Program</a>
+        <a href="{{ url_for('main_bp.log_workout_page') }}" class="btn">Log a Workout</a>
+        <a href="{{ url_for('main_bp.history_page') }}" class="btn">View Workout History</a>
+    </section>
+</div>
+{% endblock %}
+
+{% block scripts %}
+    {# main.js is already included in base.html, specific dashboard logic is triggered from there #}
+{% endblock %}

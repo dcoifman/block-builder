@@ -1,0 +1,335 @@
+/* Basic Styling for Strength Tracker */
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #77aaff 3px solid;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+header ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    float: right;
+}
+
+header li {
+    display: inline;
+    padding: 0 20px 0 20px;
+}
+
+header #branding {
+    float: left;
+}
+
+header #branding h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+nav {
+    background: #555;
+    padding: 10px 0;
+    color: #fff;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    padding: 5px 15px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background: #77aaff;
+    color: #333;
+}
+
+.content {
+    padding: 20px;
+    background: #fff;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+    color: #333;
+}
+
+/* Forms */
+form {
+    margin-bottom: 20px;
+}
+
+form div {
+    margin-bottom: 10px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="number"],
+form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box; /* Important to include padding and border in the element's total width and height */
+}
+
+form button, .btn {
+    display: inline-block;
+    background: #555;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+form button:hover, .btn:hover {
+    background: #77aaff;
+    color: #333;
+}
+
+/* Flash Messages */
+.flash {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+.flash.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+.flash.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Dashboard specific */
+.dashboard-section {
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #e9e9e9;
+    border-radius: 5px;
+}
+
+.dashboard-section h2 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+#user-maxes-list li, #poliquin-targets-list li {
+    list-style: none;
+    padding: 5px 0;
+    border-bottom: 1px dotted #ccc;
+}
+#user-maxes-list li:last-child, #poliquin-targets-list li:last-child {
+    border-bottom: none;
+}
+
+#add-max-form {
+    margin-top: 15px;
+    padding: 10px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Program Display */
+.program-week {
+    margin-bottom: 25px;
+    padding: 15px;
+    background: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+}
+
+.program-week h3 {
+    color: #333;
+    border-bottom: 2px solid #77aaff;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+.program-day {
+    margin-bottom: 15px;
+    padding-left: 10px;
+}
+
+.program-day h4 {
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.exercise-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+.exercise-table th, .exercise-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.exercise-table th {
+    background-color: #e9e9e9;
+    font-weight: bold;
+}
+
+.exercise-table td:nth-child(1) { /* Exercise Name */
+    font-weight: bold;
+}
+.exercise-table td:nth-child(3), /* Sets */
+.exercise-table td:nth-child(4), /* Reps */
+.exercise-table td:nth-child(5) { /* Target Weight */
+    text-align: center;
+}
+
+
+.btn-small {
+    padding: 5px 10px;
+    font-size: 13px;
+}
+
+/* Workout Log Form specific styling (if needed beyond general form styles) */
+#log-workout-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f0f8ff; /* AliceBlue or similar for a slight distinction */
+    border: 1px solid #d1e0ff;
+    border-radius: 5px;
+}
+
+#log-workout-section h3 {
+    margin-top: 0;
+    color: #333;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+#log-date { /* Specific styling for date input if general form input is not enough */
+    /* For example, if it needs a different width */
+}
+
+/* History Page Styling */
+#filter-section {
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+#filter-section h3 {
+    margin-top: 0;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+#filter-history-form .form-group {
+    display: inline-block; /* Align filter elements in a row */
+    margin-right: 15px;
+    margin-bottom: 10px; /* Spacing for when they wrap */
+}
+
+#filter-history-form label {
+    display: block; /* Labels above inputs */
+    margin-bottom: 3px;
+    font-weight: normal;
+}
+
+#filter-history-form input[type="date"],
+#filter-history-form select {
+    padding: 8px; /* Slightly smaller padding for filter inputs */
+    /* width: auto; */ /* Allow them to size based on content or specific CSS if needed */
+}
+
+#filter-history-form button {
+    vertical-align: bottom; /* Align button with the bottom of input fields */
+}
+
+#history-table-container {
+    margin-top: 20px;
+}
+
+#workout-history-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#workout-history-table th,
+#workout-history-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+#workout-history-table th {
+    background-color: #e9e9e9;
+    font-weight: bold;
+}
+
+#workout-history-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Zebra striping for readability */
+}
+
+#workout-history-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+#no-history-message {
+    padding: 10px;
+    background-color: #fef0f0;
+    color: #a94442;
+    border: 1px solid #ebccd1;
+    border-radius: 4px;
+    margin-top: 15px;
+}
+
+.btn-secondary { /* For Reset button or other secondary actions */
+    background: #6c757d;
+}
+.btn-secondary:hover {
+    background: #5a6268;
+    color: #fff;
+}

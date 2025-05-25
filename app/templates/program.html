@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Your Training Program - Strength Tracker{% endblock %}
+
+{% block content %}
+<div id="program-display-content">
+    <h2>Your Training Program</h2>
+    <p>This is your personalized 4-week linear periodization program. Track your progress by logging your workouts.</p>
+    
+    <div id="program-container">
+        <!-- Program will be dynamically rendered here by JavaScript -->
+        <p>Loading your program...</p>
+    </div>
+
+    <hr style="margin: 30px 0;">
+
+    <div id="log-workout-section" class="dashboard-section">
+        <h3>Log a Workout</h3>
+        <form id="log-workout-form">
+            <div>
+                <label for="log-exercise-name">Exercise Name:</label>
+                <input type="text" id="log-exercise-name" name="exercise_name" required>
+                {# Consider making this a dropdown if exercises are limited or known,
+                   but text input is simpler for pre-filling from program. #}
+            </div>
+            <div>
+                <label for="log-sets">Sets:</label>
+                <input type="number" id="log-sets" name="sets" min="1" required>
+            </div>
+            <div>
+                <label for="log-reps">Reps (per set):</label>
+                <input type="number" id="log-reps" name="reps" min="1" required>
+            </div>
+            <div>
+                <label for="log-weight">Weight (kg):</label>
+                <input type="number" id="log-weight" name="weight" step="0.5" min="0" required>
+            </div>
+            <div>
+                <label for="log-date">Date Logged:</label>
+                <input type="date" id="log-date" name="date_logged" required>
+            </div>
+            <button type="submit" class="btn">Log Workout</button>
+            <div id="log-workout-feedback" style="margin-top: 10px;"></div>
+        </form>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/program.js') }}"></script>
+{% endblock %}

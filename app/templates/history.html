@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}Workout History - Strength Tracker{% endblock %}
+
+{% block content %}
+<div id="history-content">
+    <h2>Workout History</h2>
+    <p>Review your past workouts and track your progress over time.</p>
+
+    <section id="filter-section" class="dashboard-section">
+        <h3>Filter Workouts</h3>
+        <form id="filter-history-form">
+            <div class="form-group">
+                <label for="filter-exercise-name">Exercise Name:</label>
+                <select id="filter-exercise-name" name="exercise_name">
+                    <option value="">All Exercises</option>
+                    {# Options will be populated by JavaScript #}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="filter-date-from">From:</label>
+                <input type="date" id="filter-date-from" name="date_from">
+            </div>
+            <div class="form-group">
+                <label for="filter-date-to">To:</label>
+                <input type="date" id="filter-date-to" name="date_to">
+            </div>
+            <button type="submit" class="btn">Apply Filters</button>
+            <button type="button" id="reset-filters-btn" class="btn btn-secondary" style="margin-left: 10px;">Reset Filters</button>
+        </form>
+    </section>
+
+    <section id="history-display-section" class="dashboard-section">
+        <h3>Logged Workouts</h3>
+        <div id="history-table-container">
+            <table id="workout-history-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Exercise Name</th>
+                        <th>Sets</th>
+                        <th>Reps</th>
+                        <th>Weight (kg)</th>
+                    </tr>
+                </thead>
+                <tbody id="workout-history-tbody">
+                    {# Workout logs will be populated by JavaScript #}
+                    <tr><td colspan="5">Loading history...</td></tr>
+                </tbody>
+            </table>
+            <p id="no-history-message" style="display:none;">No workouts logged yet or no results match your filters.</p>
+        </div>
+    </section>
+</div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/history.js') }}"></script>
+{% endblock %}
